@@ -2,7 +2,7 @@
 
 layout: post
 title: "2026年前端技术趋势展望：AI驱动与性能极致"
-date: 2026-03-17 15:30:00 +0800
+date: 2026-03-18 10:00:00 +0800
 categories: \[技术, 前端]
 tags: \[AI, WebAssembly, React, Performance]
 image: /assets/images/frontend-trends-2026.svg
