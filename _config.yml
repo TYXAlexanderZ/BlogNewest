@@ -1,7 +1,7 @@
-title: "My Arknights Blog"
+title: "我的明日方舟博客"
 description: "记录技术与生活"
-baseurl: ""
-url: "https://username.github.io"
+baseurl: "/BlogNewest"
+url: "https://TYXAlexanderZ.github.io"
 
 # 构建设置
 markdown: kramdown
