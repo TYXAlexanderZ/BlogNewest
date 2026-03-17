@@ -1,0 +1,49 @@
+---
+layout: page
+title: 文章分类
+---
+
+<div class="categories-container">
+  {% assign categories_max = 0 %}
+  {% for category in site.categories %}
+    {% if category[1].size > categories_max %}
+      {% assign categories_max = category[1].size %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="row g-4 mb-5">
+    {% for category in site.categories %}
+    <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+      <a href="#{{ category[0] }}" class="text-decoration-none">
+        <div class="ak-card p-4 text-center h-100 d-flex flex-column justify-content-center">
+          <i class="fas fa-folder-open mb-3" style="font-size: 2rem; color: #f59e0b;"></i>
+          <h4 class="fw-bold mb-2" style="color: #1e3a8a;">{{ category[0] }}</h4>
+          <span class="badge rounded-pill align-self-center" style="background-color: rgba(30, 58, 138, 0.1); color: #1e3a8a; font-size: 0.9rem;">
+            {{ category[1].size }} 篇文章
+          </span>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <hr class="my-5">
+
+  {% for category in site.categories %}
+  <div id="{{ category[0] }}" class="mb-5 category-section" style="padding-top: 80px; margin-top: -80px;">
+    <h3 class="fw-bold border-bottom pb-2 mb-4" style="color: #1e3a8a;">
+      <i class="fas fa-folder text-warning me-2"></i>{{ category[0] }}
+    </h3>
+    <ul class="list-group list-group-flush shadow-sm rounded">
+      {% for post in category[1] %}
+      <li class="list-group-item list-group-item-action p-3">
+        <div class="d-flex justify-content-between align-items-center flex-wrap">
+          <a href="{{ post.url | relative_url }}" class="text-decoration-none fs-5 fw-medium" style="color: #333;">{{ post.title }}</a>
+          <span class="text-muted small"><i class="far fa-calendar-alt me-1"></i>{{ post.date | date: "%Y-%m-%d" }}</span>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>

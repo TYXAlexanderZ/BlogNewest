@@ -1,0 +1,40 @@
+<div class="sidebar" data-aos="fade-left">
+  <!-- 博主信息卡片 -->
+  <div class="ak-card p-4 mb-4 text-center">
+    <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="rounded-circle mb-3" style="width: 100px; height: 100px; object-fit: cover;">
+    <h5 class="fw-bold" style="color: #1e3a8a;">{{ site.author.name }}</h5>
+    <p class="text-muted small">{{ site.author.bio }}</p>
+    <div class="d-flex justify-content-center gap-2 mt-3">
+      {% if site.social.github %}
+      <a href="https://github.com/{{ site.social.github }}" target="_blank" class="text-muted"><i class="fab fa-github fs-5"></i></a>
+      {% endif %}
+      <a href="mailto:{{ site.author.email }}" class="text-muted"><i class="fas fa-envelope fs-5"></i></a>
+    </div>
+  </div>
+
+  <!-- 分类卡片 -->
+  <div class="ak-card p-4 mb-4">
+    <h6 class="fw-bold mb-3" style="color: #1e3a8a;"><i class="fas fa-folder me-2 text-warning"></i>分类</h6>
+    <ul class="list-unstyled mb-0">
+      {% assign categories = site.categories | sort %}
+      {% for category in categories %}
+      <li class="mb-2">
+        <a href="{{ '/categories/#' | append: category[0] | relative_url }}" class="text-decoration-none d-flex justify-content-between align-items-center">
+          <span style="color: #333;">{{ category[0] }}</span>
+          <span class="badge rounded-pill" style="background-color: rgba(30, 58, 138, 0.1); color: #1e3a8a;">{{ category[1].size }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- 标签卡片 -->
+  <div class="ak-card p-4">
+    <h6 class="fw-bold mb-3" style="color: #1e3a8a;"><i class="fas fa-tags me-2 text-warning"></i>标签</h6>
+    <div>
+      {% for tag in site.tags %}
+        <a href="{{ '/tags/#' | append: tag[0] | relative_url }}" class="ak-tag text-decoration-none">{{ tag[0] }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+title: "My Arknights Blog"
+description: "记录技术与生活"
+baseurl: ""
+url: "https://username.github.io"
+
+# 构建设置
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# 分页设置
+paginate: 6
+paginate_path: "/page:num/"
+
+# 作者信息
+author:
+  name: "Doctor"
+  email: "email@example.com"
+  bio: "个人简介：热爱技术与探索的罗德岛干员。"
+  avatar: "/assets/images/avatar.png"
+
+# 社交媒体
+social:
+  github: username
+  twitter: username
+  linkedin: username
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json

@@ -1,0 +1,47 @@
+---
+layout: page
+title: 标签云
+---
+
+<div class="tags-container text-center mb-5" data-aos="fade-up">
+  {% assign tags_max = 0 %}
+  {% for tag in site.tags %}
+    {% if tag[1].size > tags_max %}
+      {% assign tags_max = tag[1].size %}
+    {% endif %}
+  {% endfor %}
+
+  <div class="p-4 bg-light rounded shadow-sm">
+    {% for tag in site.tags %}
+      {% assign tag_size = tag[1].size %}
+      {% assign font_size = tag_size | times: 10 | divided_by: tags_max | plus: 90 %}
+      <a href="#{{ tag[0] }}" class="ak-tag text-decoration-none m-2 d-inline-block" style="font-size: {{ font_size }}%; padding: 0.4rem 1rem;">
+        <i class="fas fa-hashtag me-1"></i>{{ tag[0] }} <span class="badge bg-white text-dark ms-1">{{ tag[1].size }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+<hr class="my-5">
+
+{% for tag in site.tags %}
+<div id="{{ tag[0] }}" class="mb-5 tag-section" style="padding-top: 80px; margin-top: -80px;">
+  <h3 class="fw-bold border-bottom pb-2 mb-4" style="color: #1e3a8a;">
+    <i class="fas fa-hashtag text-warning me-2"></i>{{ tag[0] }}
+  </h3>
+  <div class="row g-3">
+    {% for post in tag[1] %}
+    <div class="col-md-6" data-aos="fade-up">
+      <div class="ak-card p-3 h-100 border-start border-4" style="border-left-color: #1e3a8a !important;">
+        <a href="{{ post.url | relative_url }}" class="text-decoration-none d-block">
+          <h5 class="fw-bold mb-2 text-dark">{{ post.title }}</h5>
+          <div class="text-muted small">
+            <i class="far fa-calendar-alt me-1"></i>{{ post.date | date: "%Y-%m-%d" }}
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}

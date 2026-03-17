@@ -1,0 +1,13 @@
+<footer class="mt-5 py-4 text-center" style="background-color: #ffffff; border-top: 1px solid #e5e7eb;">
+  <div class="container">
+    <p class="mb-2 text-muted">&copy; {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+    <div class="social-links">
+      {% if site.social.github %}
+      <a href="https://github.com/{{ site.social.github }}" target="_blank" class="text-muted mx-2"><i class="fab fa-github"></i></a>
+      {% endif %}
+      {% if site.social.twitter %}
+      <a href="https://twitter.com/{{ site.social.twitter }}" target="_blank" class="text-muted mx-2"><i class="fab fa-twitter"></i></a>
+      {% endif %}
+    </div>
+  </div>
+</footer>
