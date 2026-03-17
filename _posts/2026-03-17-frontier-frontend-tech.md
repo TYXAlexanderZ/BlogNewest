@@ -2,10 +2,10 @@
 
 layout: post
 title: "2026年前端技术趋势展望：AI驱动与性能极致"
-date: 2026-03-18 10:00:00 +0800
+date: 2026-03-17 15:35:00 +0800
 categories: \[技术, 前端]
 tags: \[AI, WebAssembly, React, Performance]
-image: /assets/images/frontend-trends-2026.svg
+image: /assets/images/Snipaste_2024-06-06_10-11-21.png
 description: "探讨2026年前端开发的最新趋势，包括AI辅助编程、WebAssembly的全面普及以及服务器组件的演进。"
 --------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ description: "探讨2026年前端开发的最新趋势，包括AI辅助编程、
 
 随着2026年的到来，前端开发领域再次迎来了翻天覆地的变化。AI不再仅仅是辅助工具，而是成为了开发的驱动核心；WebAssembly (Wasm) 终于突破了最后的性能瓶颈，开始在重型应用中大放异彩。本文将带你一览今年的核心技术趋势。
 
-!\[2026前端趋势]\({{ '/assets/images/frontend-trends-2026.svg' | relative\_url }})
+![2026前端趋势]({{ '/assets/images/Snipaste_2024-06-06_10-11-21.png' | relative_url }})
 
 ## 1. AI 驱动开发 (AI-Driven Development)
 
